@@ -23,6 +23,7 @@ This project is a voice assistant named Lexa. It can perform various tasks based
 
 Follow these steps to install Lexa Voice Assistant:
 
+For easier instal (use only)  [click here](<https://drive.google.com/file/d/1Y7YyaE2IEGvMrY0nKuzQ4cEInML5JEej/view?usp=sharing>).
 ```bash
 git clone https://github.com/ImanBanerjee/Voice-Assistant-.git
 ```
