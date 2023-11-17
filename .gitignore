@@ -10,8 +10,14 @@ __pycache__/
 #Portaudio
 Portaudio/
 
-*.pywhatkit_history.txt
+
 pywhatkit_history.txt
 
 *.PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
 
+
+
+
+build/
+voice_assistant_interface.spec
+main.spec
