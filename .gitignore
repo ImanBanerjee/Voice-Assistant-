@@ -1,0 +1,11 @@
+# Virtual Environment
+venv/
+
+# Compiled Python files
+*.pyc
+
+# Python cache
+__pycache__/
+
+#Portaudio
+Portaudio/
