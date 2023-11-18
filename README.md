@@ -34,24 +34,7 @@ cd lexa-voice-assistant
 pip install -r requirements.txt
 ```
 
-**This Libraries are required for this Project to run**
-```bash
-pip install tk
-```
-```bash
-pip install SpeechRecognition
-```
-```bash
-pip install pyttsx3
-```
-```bash
-pip install wikipedia-api
-```
-```bash
-pip install pywhatkit
-```
-
-*It is recommended to run this code as Venv in Windows 10 and Python 3.7.2, as in future versions it may encounter some issues.*
+*It is recommended to run this code as Venv in Windows 10 and Python 3.7.2, as in future versions it may encounter some issues.* for more info [click here](<https://docs.python.org/3/library/venv.html>)
 
 # Usage
 To use Lexa, run the following command:
