@@ -5,6 +5,7 @@ import webbrowser
 import wikipedia
 import os
 import pywhatkit  # Added for playing songs
+import requests 
 
 # Initialize the speech recognition and text-to-speech engines
 recognizer = sr.Recognizer()
@@ -84,6 +85,11 @@ class VoiceAssistant:
        elif "wikipedia of" in statement:
         query = statement.replace("wikipedia of", "").strip()
         self.search_wikipedia(query)
+       elif "weather in" in statement:
+            city = statement.replace("weather in", "").strip()
+            self.get_weather_with_aqi(city)
+
+
        else:
         self.speak("I'm sorry, I didn't understand that.")
 
@@ -110,6 +116,29 @@ class VoiceAssistant:
        except wikipedia.exceptions.PageError:
         print(f"No Wikipedia page found for {query}.")
         self.speak(f"No Wikipedia page found for {query}")
+
+         # Function to get the weather information
+    def get_weather_with_aqi(self, city):
+        try:
+            api_key = '57ebaed63fae4c149e5115051231711'
+            base_url = f'https://api.weatherapi.com/v1/current.json?key={api_key}&q={city}&aqi=yes'
+            response = requests.get(base_url)
+
+            if response.status_code == 200:
+                weather_data = response.json()
+                temperature_celsius = weather_data['current']['temp_c']
+                condition = weather_data['current']['condition']['text']
+                aqi = weather_data['current']['air_quality']['us-epa-index']
+
+                weather_report = f"The weather in {city} is {condition} with a temperature of {temperature_celsius} degrees Celsius. AQI: {aqi}"
+                print(weather_report)
+                self.speak(weather_report)
+            else:
+                print(f"Failed to fetch weather data. Status code: {response.status_code}, Response: {response.text}")
+                self.speak("Sorry, I couldn't fetch weather information at the moment.")
+        except Exception as e:
+            print(f"Error fetching weather information: {e}")
+            self.speak("Sorry, I couldn't fetch weather information at the moment.")
 
     def stop_listening(self):
         self.stopped = True
