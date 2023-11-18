@@ -71,6 +71,7 @@ Lexa understands various voice commands such as:
 * "Play a song [song_name]"
 * "Goodbye" or "Bye"
 * "Wikipedia of [query]"
+* "Weather in [City]"
 
 # Contributing
 Contributions are welcome! If you want to contribute, follow these steps:
